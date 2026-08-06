@@ -4,7 +4,7 @@ from telebot import types
 import google.generativeai as genai
 
 # --- Configurations ---
-TELEGRAM_BOT_TOKEN = "8657556886:AAE4eT2cznyCEOOXXwvIArAbOTOCqjUahcY"
+TELEGRAM_BOT_TOKEN = "8657556886:AAHd2tU-MLqCLSdwM5w4qIIoAu4qvzUcJiQ"
 GEMINI_API_KEY = "AQ.Ab8RN6LpsyLKot_Z6bQI-Qy_4UQqWoA7hBXkgxQRTf4H4KlvKg"
 
 # ඇඩ්මින්වරුන්ගේ Telegram Numeric ID ලැයිස්තුව
@@ -14,7 +14,7 @@ bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 genai.configure(api_key=GEMINI_API_KEY)
 ai_model = genai.GenerativeModel("gemini-1.5-flash")
 
-# ඉල්ලපු අලුත් අත්සන (Signature)
+# අත්සන (Signature)
 FOOTER_SIGNATURE = "\n\n_⁠∫(Science_Guys)dx_Administration"
 
 # --- Database Setup ---
@@ -359,5 +359,5 @@ def handle_grading(call):
         parse_mode="Markdown"
     )
 
-print("Science Guys Final Pro Bot is running successfully...")
+print("Science Guys Final Pro Bot with Revoked Token is running successfully...")
 bot.infinity_polling()
