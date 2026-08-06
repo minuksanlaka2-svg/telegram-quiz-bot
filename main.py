@@ -1,11 +1,12 @@
+import os
 import sqlite3
 import telebot
 from telebot import types
 import google.generativeai as genai
 
-# --- Configurations ---
-TELEGRAM_BOT_TOKEN = "8657556886:AAHd2tU-MLqCLSdwM5w4qIIoAu4qvzUcJiQ"
-GEMINI_API_KEY = "AQ.Ab8RN6LpsyLKot_Z6bQI-Qy_4UQqWoA7hBXkgxQRTf4H4KlvKg"
+# --- Configurations (Environment Variables හරහා ආරක්ෂිතව ලබා ගැනීම) ---
+TELEGRAM_BOT_TOKEN = os.getenv("BOT_TOKEN")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AQ.Ab8RN6LpsyLKot_Z6bQI-Qy_4UQqWoA7hBXkgxQRTf4H4KlvKg")
 
 # ඇඩ්මින්වරුන්ගේ Telegram Numeric ID ලැයිස්තුව
 ADMIN_USER_IDS = [8207531738, 1732059165]
@@ -317,7 +318,7 @@ def handle_general_messages(message):
         state = admin_creation_state[user_id]
         if state["step"] == "waiting_name":
             state["quiz_name"] = message.text
-            state["step"] = "waiting_questions"
+            state["step"] == "waiting_questions"
             bot.reply_to(message, f"✅ නම සටහන් කරගැනිණි. දැන් **Code එකක්, Text එකක් හෝ Poll එකක්** ලෙස ප්‍රශ්න ටික එවන්න (EX සහ Time ranges සමඟ):{FOOTER_SIGNATURE}")
         elif state["step"] == "waiting_questions":
             processed_data = process_quiz_content_with_ai(message.text)
@@ -359,5 +360,5 @@ def handle_grading(call):
         parse_mode="Markdown"
     )
 
-print("Science Guys Final Pro Bot with Revoked Token is running successfully...")
+print("Science Guys Final Pro Bot with Environment Variables is running successfully...")
 bot.infinity_polling()
