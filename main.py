@@ -5,7 +5,7 @@ from telebot import types
 import google.generativeai as genai
 
 # --- Configurations (Environment Variables හරහා ආරක්ෂිතව ලබා ගැනීම) ---
-TELEGRAM_BOT_TOKEN = os.getenv("BOT_TOKEN")
+TELEGRAM_BOT_TOKEN = os.getenv("8657556886:AAEabSvd9TqNIbDY0o8wGbk9NleP3ZCnCqI")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AQ.Ab8RN6LpsyLKot_Z6bQI-Qy_4UQqWoA7hBXkgxQRTf4H4KlvKg")
 
 # ඇඩ්මින්වරුන්ගේ Telegram Numeric ID ලැයිස්තුව
