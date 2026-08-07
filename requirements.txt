@@ -1,3 +1,2 @@
-pytelegrambotapi
+pyTelegramBotAPI
 google-generativeai
-apscheduler
